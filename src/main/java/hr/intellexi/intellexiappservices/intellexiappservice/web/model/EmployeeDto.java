@@ -20,7 +20,7 @@ public class EmployeeDto implements Serializable {
     private String lastName;
     private LocalDateTime dateOfBirth;
     private LocalDateTime firstDayInCompany;
-    private Float yearOfExperience;
+    private Float yearsOfExperience;
     private Boolean managingProject;
     private Long managedBy;
     private EmployeeType employeeType;
