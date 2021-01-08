@@ -30,6 +30,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public String getEmployees() {
+        return "radi";
+    }
+
+    @Override
     public void deleteById(long id) {
         log.info("Deleting employee with ID: " + id);
     }

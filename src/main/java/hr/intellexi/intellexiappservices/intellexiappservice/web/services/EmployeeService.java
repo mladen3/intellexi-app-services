@@ -6,6 +6,8 @@ public interface EmployeeService {
 
     EmployeeDto getEmployeeById(long id);
 
+    String getEmployees();
+
     void deleteById(long id);
 
     EmployeeDto saveEmployee(EmployeeDto employeeDto);
