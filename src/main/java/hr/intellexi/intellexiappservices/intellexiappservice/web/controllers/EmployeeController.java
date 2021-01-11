@@ -29,11 +29,6 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.getEmployeeById(employeeId), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<String> getEmployees() {
-        return new ResponseEntity<>(employeeService.getEmployees(), HttpStatus.OK);
-    }
-
     @PostMapping
     public ResponseEntity<EmployeeDto> saveBeer(@RequestBody EmployeeDto beerDto) {
         return new ResponseEntity<>(employeeService.saveEmployee(beerDto), HttpStatus.OK);
