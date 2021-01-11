@@ -15,12 +15,12 @@ import java.time.LocalDateTime;
 @Builder
 public class EmployeeDto implements Serializable {
 
-    private Long id;
+    private long id;
     private String firstName;
     private String lastName;
     private LocalDateTime dateOfBirth;
     private LocalDateTime firstDayInCompany;
-    private Float yearsOfExperience;
+    private float yearsOfExperience;
     private Boolean managingProject;
     private Long managedBy;
     private EmployeeType employeeType;
