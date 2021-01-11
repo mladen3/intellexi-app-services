@@ -1,6 +1,9 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.services;
 
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
+import org.springframework.data.domain.Page;
+
+import java.util.List;
 
 public interface EmployeeService {
 
@@ -11,4 +14,8 @@ public interface EmployeeService {
     EmployeeDto saveEmployee(EmployeeDto employeeDto);
 
     void updateEmployee(EmployeeDto employeeDto);
+
+    List<EmployeeDto> findAll();
+
+    List<EmployeeDto> findAll(int page, int size);
 }

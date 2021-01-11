@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/rest/v1/employee")
 public class EmployeeController {
@@ -45,4 +47,18 @@ public class EmployeeController {
     public void deleteEmployee(@PathVariable("employeeId") long employeeId) {
         employeeService.deleteById(employeeId);
     }
+
+    @GetMapping("/findAll")
+    @ResponseStatus(HttpStatus.OK)
+    public List<EmployeeDto> findAllEmployees() {
+        return employeeService.findAll();
+    }
+
+    @GetMapping("/findAll/{page}/{size}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<EmployeeDto> findAllEmployees(@PathVariable int page, @PathVariable int size) {
+        return employeeService.findAll(page, size);
+    }
+
+
 }
