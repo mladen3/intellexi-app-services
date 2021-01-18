@@ -1,6 +1,6 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.utils;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.utils;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Event;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Event;
 
 import java.time.LocalDateTime;
 import java.time.Month;

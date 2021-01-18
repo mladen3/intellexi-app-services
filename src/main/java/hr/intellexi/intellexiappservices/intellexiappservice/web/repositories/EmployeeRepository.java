@@ -1,6 +1,6 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.repositories;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.repositories;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Employee;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,16 +1,14 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.controllers;
 
-import static hr.intellexi.intellexiappservices.intellexiappservice.utils.EmployeeHelper.getOneTestEmployee;
-import static hr.intellexi.intellexiappservices.intellexiappservice.utils.EmployeeHelper.getTestEmployeeDto;
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Employee;
-import hr.intellexi.intellexiappservices.intellexiappservice.mappers.EmployeeMapper;
-import hr.intellexi.intellexiappservices.intellexiappservice.repositories.EmployeeRepository;
-import hr.intellexi.intellexiappservices.intellexiappservice.utils.EmployeeHelper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.mappers.EmployeeMapper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EmployeeRepository;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.EmployeeHelper;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.services.EmployeeService;
 import org.junit.jupiter.api.Test;
@@ -18,13 +16,8 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @WebMvcTest({
@@ -52,7 +45,7 @@ class EmployeeControllerTest {
     void getEmployee() throws Exception {
         long id = 12345L;
 
-        Mockito.when(employeeRepository.findById(id)).thenReturn(getOneTestEmployee(id));
+        Mockito.when(employeeRepository.findById(id)).thenReturn(EmployeeHelper.getOneTestEmployee(id));
 
         mockMvc.perform(get("/rest/v1/employee" + "/" + id).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
@@ -65,7 +58,7 @@ class EmployeeControllerTest {
         Mockito.when(employeeRepository.save(any())).thenReturn(any());
 
         mockMvc.perform(post("/rest/v1/employee")
-                .content(objectMapper.writeValueAsString(getTestEmployeeDto()))
+                .content(objectMapper.writeValueAsString(EmployeeHelper.getTestEmployeeDto()))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -75,7 +68,7 @@ class EmployeeControllerTest {
 
         Mockito.when(employeeRepository.save(any())).thenReturn(any());
 
-        EmployeeDto testEmployee = getTestEmployeeDto();
+        EmployeeDto testEmployee = EmployeeHelper.getTestEmployeeDto();
 
         mockMvc.perform(put("/rest/v1/employee")
                 .content(objectMapper.writeValueAsString(testEmployee))

@@ -1,7 +1,6 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.services;
 
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 

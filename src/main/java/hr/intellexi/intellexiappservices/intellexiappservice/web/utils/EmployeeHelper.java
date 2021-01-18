@@ -1,6 +1,6 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.utils;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.utils;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Employee;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.enums.EmployeeType;
 

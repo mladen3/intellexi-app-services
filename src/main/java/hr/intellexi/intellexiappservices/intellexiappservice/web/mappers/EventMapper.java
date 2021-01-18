@@ -1,7 +1,7 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.mappers;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.mappers;
 
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Event;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Event;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EventDto;
 import org.mapstruct.Mapper;
 

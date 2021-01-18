@@ -1,8 +1,8 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.services.impl;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Event;
-import hr.intellexi.intellexiappservices.intellexiappservice.mappers.EventMapper;
-import hr.intellexi.intellexiappservices.intellexiappservice.repositories.EventRepository;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Event;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.mappers.EventMapper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EventRepository;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EventDto;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.services.EventService;
 import lombok.extern.slf4j.Slf4j;

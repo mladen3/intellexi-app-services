@@ -1,6 +1,6 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.mappers;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.mappers;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Employee;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
 import org.mapstruct.Mapper;
 

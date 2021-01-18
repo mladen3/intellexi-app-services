@@ -1,8 +1,8 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.services.impl;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Employee;
-import hr.intellexi.intellexiappservices.intellexiappservice.mappers.EmployeeMapper;
-import hr.intellexi.intellexiappservices.intellexiappservice.repositories.EmployeeRepository;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.mappers.EmployeeMapper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EmployeeRepository;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.services.EmployeeService;
 
@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package hr.intellexi.intellexiappservices.intellexiappservice;
+package hr.intellexi.intellexiappservices.intellexiappservice.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

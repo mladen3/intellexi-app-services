@@ -1,8 +1,8 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.bootstrap;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.bootstrap;
 
 
-import hr.intellexi.intellexiappservices.intellexiappservice.repositories.EventRepository;
-import hr.intellexi.intellexiappservices.intellexiappservice.utils.EventHelper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EventRepository;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.EventHelper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.repositories;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.repositories;
 
 
-import hr.intellexi.intellexiappservices.intellexiappservice.domain.Event;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

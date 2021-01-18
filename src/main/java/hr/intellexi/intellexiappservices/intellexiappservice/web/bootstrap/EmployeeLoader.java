@@ -1,7 +1,7 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.bootstrap;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.bootstrap;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.repositories.EmployeeRepository;
-import hr.intellexi.intellexiappservices.intellexiappservice.utils.EmployeeHelper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EmployeeRepository;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.EmployeeHelper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
