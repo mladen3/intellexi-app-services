@@ -41,6 +41,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public EventDto saveEvent(EventDto eventDto) {
         log.info("Saving event : " + eventDto.toString());
+        eventDto.setEditable(true);
 
         Event eventToSave = eventRepository.save(eventMapper.EventDtoToEvent(eventDto));
         return eventMapper.EventToEventDto(eventToSave);
