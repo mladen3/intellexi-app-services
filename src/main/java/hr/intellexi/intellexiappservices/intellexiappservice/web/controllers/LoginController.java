@@ -1,6 +1,6 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.controllers;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.web.helpers.JwtHelper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.JwtHelper;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.auth.AuthRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
