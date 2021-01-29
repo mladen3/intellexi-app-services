@@ -1,29 +1,36 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.mappers.EmployeeMapper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EmployeeRepository;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.services.EmployeeService;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.services.impl.UserServiceImpl;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.EmployeeHelper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.JwtHelper;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.web.servlet.MockMvc;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
-import hr.intellexi.intellexiappservices.intellexiappservice.web.mappers.EmployeeMapper;
-import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EmployeeRepository;
-import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.EmployeeHelper;
-import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
-import hr.intellexi.intellexiappservices.intellexiappservice.web.services.EmployeeService;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
 
 
-@WebMvcTest({
+
+@WebMvcTest(controllers={
         EmployeeController.class,
         EmployeeService.class
 })
+@AutoConfigureMockMvc(addFilters = false)
 class EmployeeControllerTest {
 
     @Autowired
@@ -36,7 +43,16 @@ class EmployeeControllerTest {
     EmployeeRepository employeeRepository;
 
     @MockBean
+    UserServiceImpl userServiceImpl;
+
+    @MockBean
     EmployeeMapper employeeMapper;
+
+    @MockBean
+    JwtHelper jwtHelper;
+
+    @MockBean
+    PasswordEncoder passwordEncoder;
 
     @Autowired
     ObjectMapper objectMapper;

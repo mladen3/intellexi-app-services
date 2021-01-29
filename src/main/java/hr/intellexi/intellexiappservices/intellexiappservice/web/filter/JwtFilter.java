@@ -1,6 +1,6 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.filter;
 
-import hr.intellexi.intellexiappservices.intellexiappservice.web.helpers.JwtHelper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.utils.JwtHelper;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.services.impl.UserServiceImpl;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

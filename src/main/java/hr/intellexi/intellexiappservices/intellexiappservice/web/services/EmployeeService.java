@@ -1,6 +1,7 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.services;
 
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.model.auth.AuthRequest;
 
 import java.util.List;
 
@@ -10,11 +11,13 @@ public interface EmployeeService {
 
     void deleteById(long id);
 
-    EmployeeDto saveEmployee(EmployeeDto employeeDto);
+    AuthRequest saveEmployee(EmployeeDto employeeDto);
 
     void updateEmployee(EmployeeDto employeeDto);
 
     List<EmployeeDto> findAll();
 
     List<EmployeeDto> findAll(int page, int size);
+
+    Integer getNumberOfEmployeesWithFirstName(String firstName);
 }
