@@ -1,6 +1,7 @@
 package hr.intellexi.intellexiappservices.intellexiappservice.web.controllers;
 
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.model.auth.AuthRequest;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.services.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +33,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<EmployeeDto> saveBeer(@RequestBody EmployeeDto beerDto) {
+    public ResponseEntity<AuthRequest> saveBeer(@RequestBody EmployeeDto beerDto) {
         return new ResponseEntity<>(employeeService.saveEmployee(beerDto), HttpStatus.OK);
     }
 

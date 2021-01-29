@@ -2,6 +2,7 @@ package hr.intellexi.intellexiappservices.intellexiappservice.web.services.impl;
 
 import hr.intellexi.intellexiappservices.intellexiappservice.web.domain.Employee;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.mappers.EmployeeMapper;
+import hr.intellexi.intellexiappservices.intellexiappservice.web.model.auth.AuthRequest;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.repositories.EmployeeRepository;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.model.EmployeeDto;
 import hr.intellexi.intellexiappservices.intellexiappservice.web.services.EmployeeService;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import hr.intellexi.intellexiappservices.intellexiappservice.web.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,11 +24,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
     private final EmployeeMapper employeeMapper;
+    private final UserService userService;
 
     public EmployeeServiceImpl(EmployeeRepository employeeRepository,
-                               EmployeeMapper employeeMapper) {
+                               EmployeeMapper employeeMapper,
+                               UserService userService) {
         this.employeeRepository = employeeRepository;
         this.employeeMapper = employeeMapper;
+        this.userService = userService;
     }
 
     @Override
@@ -46,13 +51,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
+    public AuthRequest saveEmployee(EmployeeDto employeeDto) {
         log.info("Saving employee: " + employeeDto.toString());
 
         Employee employeeSaved =
                 employeeRepository.save(employeeMapper.EmployeeDtoToEmployee(employeeDto));
 
-        return employeeMapper.EmployeeToEmployeeDto(employeeSaved);
+//        return employeeMapper.EmployeeToEmployeeDto(employeeSaved);
+        Integer numberOfFirstNames = this.getNumberOfEmployeesWithFirstName(employeeSaved.getFirstName());
+        return userService.createCredentialsForEmployee(employeeSaved, numberOfFirstNames);
     }
 
     @Override
@@ -83,5 +90,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.findAll(pageable).getContent().stream()
                 .map(employeeMapper::EmployeeToEmployeeDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Integer getNumberOfEmployeesWithFirstName(String firstName) {
+        return employeeRepository.getNumberOfEmployeesWithFirstName(firstName);
     }
 }

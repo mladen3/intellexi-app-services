@@ -1,4 +1,4 @@
-package hr.intellexi.intellexiappservices.intellexiappservice.web.helpers;
+package hr.intellexi.intellexiappservices.intellexiappservice.web.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
