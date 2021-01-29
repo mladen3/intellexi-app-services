@@ -17,7 +17,7 @@ public class ProjectController {
 
     public ProjectController (ProjectService projectService) { this.projectService = projectService; }
 
-    @GetMapping
+    @GetMapping("/findAll")
     public List<ProjectDto> findAll (){ return projectService.findAll();  }
 
     @GetMapping("{projectId")
